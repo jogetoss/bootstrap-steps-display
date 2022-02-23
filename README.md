@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+This form element is used to display status in steps with 2 presentation styles. 
 
 # Getting Help
 
