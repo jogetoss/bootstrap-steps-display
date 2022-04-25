@@ -20,7 +20,7 @@ public class BootstrapStepsDisplayField extends Element implements FormBuilderPa
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override
@@ -43,6 +43,17 @@ public class BootstrapStepsDisplayField extends Element implements FormBuilderPa
         }else if(theme.equalsIgnoreCase("2")){
             template = "BootstrapStepsDisplayFieldIcon.ftl";
         }
+        
+        //set scale
+        String scale = (String)getProperty("scale");
+        if(scale == null){
+            if(theme.equalsIgnoreCase("1")){
+                scale = "1.5";
+            }else if(theme.equalsIgnoreCase("2")){
+                scale = "1";
+            }
+        }
+        dataModel.put("scale", scale);
         
         // set options
         Collection<Map> optionMap = getOptionMap(formData);

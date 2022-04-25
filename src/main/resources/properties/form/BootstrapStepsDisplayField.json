@@ -15,7 +15,15 @@
             "name":"statusFieldId",
             "label":"@@form.BootstrapStepsDisplayField.statusFieldID@@",
             "type":"autocomplete",
-            "options_callback":"FormBuilder.getFieldOptions"
+            "options_callback":"FormBuilder.getFieldOptions",
+            "required" : "true"
+         },
+         {
+            "name" : "scale",
+            "label" : "@@form.BootstrapStepsDisplayField.scale@@",
+            "type" : "textfield",
+            "value" : "1.5",
+            "required" : "true"
          },
          {
             "name":"options",
@@ -49,11 +57,27 @@
             "options":[
                 {
                     "value":"2",
-                    "label": "Icon"
+                    "label": "@@form.BootstrapStepsDisplayField.icon@@"
                 },
                 {
                     "value":"1",
-                    "label":"Simple"
+                    "label":"@@form.BootstrapStepsDisplayField.numbering@@"
+                }
+            ]
+         },
+         {
+            "name":"connector",
+            "label":"@@form.BootstrapStepsDisplayField.connector@@",
+            "type":"selectbox",
+            "value" : "line",
+            "options":[
+                {
+                    "value":"line",
+                    "label": "@@form.BootstrapStepsDisplayField.connector.line@@"
+                },
+                {
+                    "value":"arrow",
+                    "label":"@@form.BootstrapStepsDisplayField.connector.arrow@@"
                 }
             ]
          },
@@ -64,7 +88,8 @@
                 "value" : "#FFFFFF",
                 "control_field": "theme",
                 "control_value": "2",
-                "control_use_regex": "false"
+                "control_use_regex": "false",
+                "required" : "true"
          },
          {
                 "name": "iconBackgroundColor",
@@ -73,7 +98,8 @@
                 "value" : "#f5f5f5",
                 "control_field": "theme",
                 "control_value": "2",
-                "control_use_regex": "false"
+                "control_use_regex": "false",
+                "required" : "true"
          },
          {
                 "name": "iconBackgroundColorComplete",
@@ -82,7 +108,8 @@
                 "value" : "#0da9ef",
                 "control_field": "theme",
                 "control_value": "2",
-                "control_use_regex": "false"
+                "control_use_regex": "false",
+                "required" : "true"
          }
       ]
    }

@@ -3,6 +3,10 @@
     <link rel="stylesheet" href="${request.contextPath}/plugin/org.joget.marketplace.BootstrapStepsDisplayField/css/pe-icon-7-stroke.min.css">
 
     <style type="text/css">
+        #${elementParamName!} .stepsIcon{
+            transform: scale(${scale!});
+        }
+        
         #${elementParamName!} .stepsIcon .step .step-icon {
             background-color: ${element.properties.iconBackgroundColor!};
         }
@@ -23,6 +27,24 @@
             background-color: ${element.properties.iconBackgroundColorComplete!};
             color: ${element.properties.iconColor!};
         }
+
+        <#if element.properties.connector! == "arrow" >
+        #${elementParamName!} .step-icon-wrap::before{
+            top: 39%;
+            width: 20px;
+            left: -25px;
+            height: 20px;
+            background-color: unset !important;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            border-width: 0 2px 2px 0 !important;
+            border: solid;
+        }
+
+        #${elementParamName!} .step-icon-wrap::after{
+            display: none;
+        }
+        </#if>
     </style>
     <script type="text/javascript">
 

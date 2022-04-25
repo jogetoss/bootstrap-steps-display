@@ -1,8 +1,8 @@
 <div class="form-cell" ${elementMetaData!}>
-    <link rel="stylesheet" href="${request.contextPath}/plugin/org.joget.marketplace.BootstrapStepsDisplayField/css/bootstrap-steps.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/plugin/org.joget.marketplace.BootstrapStepsDisplayField/css/bootstrap-steps.css">
     <style type="text/css">
         #${elementParamName!}.steps {
-            transform: scale(1.5);
+            transform: scale(${scale!});
             margin: 1.2rem auto;
             width: fit-content;
             width: -moz-fit-content;
@@ -26,6 +26,20 @@
             word-break: break-word;
             text-align: center;
         }
+
+        <#if element.properties.connector! == "arrow" >
+        #${elementParamName!} .step-circle::before{
+            top: 25%;
+            width: 15px;
+            left: -50px;
+            height: 15px;
+            background-color: unset !important;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            border-width: 0 2px 2px 0 !important;
+            border: solid;
+        }
+        </#if>
     </style>
     <script type="text/javascript">
 

@@ -28,7 +28,7 @@ public class BootstrapStepsDisplayFormatter extends DataListColumnFormatDefault 
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override
@@ -63,12 +63,17 @@ public class BootstrapStepsDisplayFormatter extends DataListColumnFormatDefault 
         for (Object o : options) {
             Map mapping = (HashMap) o;
             if(!lastStepReached){
-                mapping.put("class", "completed");
+                if(theme.equalsIgnoreCase("1")){
+                    mapping.put("class", "step-success");
+                }else if(theme.equalsIgnoreCase("2")){
+                    mapping.put("class", "completed");
+                }
             }else{
                 mapping.put("class", "");
             }
             if(((String)value).equalsIgnoreCase((String)mapping.get("value"))){
                 lastStepReached = true;
+                mapping.put("class", "step-active");
             }
 
             optionMap.add(mapping);
