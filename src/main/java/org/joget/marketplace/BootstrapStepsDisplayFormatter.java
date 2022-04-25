@@ -73,7 +73,11 @@ public class BootstrapStepsDisplayFormatter extends DataListColumnFormatDefault 
             }
             if(((String)value).equalsIgnoreCase((String)mapping.get("value"))){
                 lastStepReached = true;
-                mapping.put("class", "step-active");
+                if(theme.equalsIgnoreCase("1")){
+                    mapping.put("class", "step-active");
+                }else if(theme.equalsIgnoreCase("2")){
+                    mapping.put("class", "completed");
+                }
             }
 
             optionMap.add(mapping);
