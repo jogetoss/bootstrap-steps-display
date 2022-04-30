@@ -1,6 +1,6 @@
 # Description
 
-This form element is used to display status in steps with 2 presentation styles. 
+This form element is used to display status in steps with 2 presentation styles. Please refer to the [documentation](https://dev.joget.org/community/display/marketplace/Bootstrap+Steps+Display+Plugin).
 
 # Getting Help
 
