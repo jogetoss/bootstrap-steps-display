@@ -13,7 +13,7 @@
     }
 
     td.column_${columnName!} .stepsIcon{
-        
+        margin: 0;
     }
 
     td.column_${columnName!} .stepsIcon .step .step-title{
@@ -26,8 +26,9 @@
 
     td.column_${columnName!} .step-icon i{
         color: ${element.properties.iconColor!};
-        font-size: 28px !important;
+        font-size: 20px !important;
         vertical-align: middle;
+        padding-top: 4px !important;
     }
 
     td.column_${columnName!} .stepsIcon .step.completed .step-icon-wrap::before,
@@ -42,16 +43,20 @@
     }
     
     <#if element.properties.connector! == "arrow" >
-        td.column_${columnName!} .step-circle::before{
-            top: 20%;
-            width: 10px;
-            left: -35px;
-            height: 10px;
-            background-color: unset;
-            transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
+        td.column_${columnName!} .step-icon-wrap::before{
+            top: 39% !important;
+            width: 10px !important;
+            left: -5px !important;
+            height: 10px !important;
+            background-color: unset !important;
+            transform: rotate(-45deg) !important;
+            -webkit-transform: rotate(-45deg) !important;
+            border: solid !important;
             border-width: 0 2px 2px 0 !important;
-            border: solid;
+        }
+
+        td.column_${columnName!} .step-icon-wrap::after{
+            display: none !important;
         }
     </#if>
 </style>

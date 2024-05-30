@@ -58,28 +58,41 @@ public class BootstrapStepsDisplayFormatter extends DataListColumnFormatDefault 
         // set options
         Object[] options = (Object[]) getProperty("options");
         Collection<Map> optionMap = new ArrayList<>();
-        
+        boolean valueFound = false;
+
         boolean lastStepReached = false;
         for (Object o : options) {
             Map mapping = (HashMap) o;
-            if(!lastStepReached){
-                if(theme.equalsIgnoreCase("1")){
-                    mapping.put("class", "step-success");
-                }else if(theme.equalsIgnoreCase("2")){
-                    mapping.put("class", "completed");
+            if (value != null && !value.equals("") ){
+                if (((String) value).equalsIgnoreCase((String) mapping.get("value"))) {
+                    valueFound = true;
                 }
-            }else{
+            }
+        }
+
+        for (Object o : options) {
+            Map mapping = (HashMap) o;
+            if (valueFound){
+                if (!lastStepReached) {
+                    if (theme.equalsIgnoreCase("1")) {
+                        mapping.put("class", "step-success");
+                    } else if (theme.equalsIgnoreCase("2")) {
+                        mapping.put("class", "completed");
+                    }
+                } else {
+                    mapping.put("class", "");
+                }
+                if (((String) value).equalsIgnoreCase((String) mapping.get("value"))) {
+                    lastStepReached = true;
+                    if (theme.equalsIgnoreCase("1")) {
+                        mapping.put("class", "step-active");
+                    } else if (theme.equalsIgnoreCase("2")) {
+                        mapping.put("class", "completed");
+                    }
+                }
+            } else {
                 mapping.put("class", "");
             }
-            if(((String)value).equalsIgnoreCase((String)mapping.get("value"))){
-                lastStepReached = true;
-                if(theme.equalsIgnoreCase("1")){
-                    mapping.put("class", "step-active");
-                }else if(theme.equalsIgnoreCase("2")){
-                    mapping.put("class", "completed");
-                }
-            }
-
             optionMap.add(mapping);
         }
         
