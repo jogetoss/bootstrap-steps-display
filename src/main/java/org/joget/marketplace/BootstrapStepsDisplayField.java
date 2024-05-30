@@ -20,7 +20,7 @@ public class BootstrapStepsDisplayField extends Element implements FormBuilderPa
 
     @Override
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     @Override

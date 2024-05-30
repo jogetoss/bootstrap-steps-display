@@ -28,7 +28,7 @@ public class BootstrapStepsDisplayFormatter extends DataListColumnFormatDefault 
 
     @Override
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     @Override
