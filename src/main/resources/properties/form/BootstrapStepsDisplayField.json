@@ -22,32 +22,8 @@
             "name" : "scale",
             "label" : "@@form.BootstrapStepsDisplayField.scale@@",
             "type" : "textfield",
-            "value" : "1.5",
-            "required" : "true"
-         },
-         {
-            "name":"options",
-            "label":"@@form.BootstrapStepsDisplayField.options@@",
-            "description":"@@form.BootstrapStepsDisplayField.options.desc@@",
-            "type":"grid",
-            "columns":[
-               {
-                  "key":"numbering",
-                  "label":"@@form.BootstrapStepsDisplayField.numbering@@"
-               },
-               {
-                  "key":"icon",
-                  "label":"@@form.BootstrapStepsDisplayField.icon@@"
-               },
-               {
-                  "key":"value",
-                  "label":"@@form.selectbox.value@@"
-               },
-               {
-                  "key":"label",
-                  "label":"@@form.selectbox.label@@"
-               }
-            ]
+            "value": "1.5",
+            "required": "true"
          },
          {
             "name":"theme",
@@ -110,6 +86,105 @@
                 "control_value": "2",
                 "control_use_regex": "false",
                 "required" : "true"
+         }
+      ]
+   },
+   {
+      "title":"@@form.BootstrapStepsDisplayField.datasource@@",
+      "properties":[
+         {
+            "name":"datasource",
+            "label":"@@form.BootstrapStepsDisplayField.datasource@@",
+            "type":"selectbox",
+            "value":"formdata",
+            "options":[
+                {
+                    "value":"formdata",
+                    "label": "@@form.BootstrapStepsDisplayField.datasource.formdata@@"
+                },
+                {
+                    "value":"manual",
+                    "label":"@@form.BootstrapStepsDisplayField.datasource.manual@@"
+                }
+            ]
+         },
+         {
+            "name": "options",
+            "label": "@@form.BootstrapStepsDisplayField.options@@",
+            "type":"grid",
+            "control_field": "datasource",
+            "control_value": "manual",
+            "columns":[
+               {
+                  "key":"numbering",
+                  "label":"@@form.BootstrapStepsDisplayField.numbering@@"
+               },
+               {
+                  "key":"icon",
+                  "label":"@@form.BootstrapStepsDisplayField.icon@@"
+               },
+               {
+                  "key":"value",
+                  "label":"@@form.selectbox.value@@"
+               },
+               {
+                  "key":"label",
+                  "label":"@@form.selectbox.label@@"
+               }
+            ]
+         },
+         {
+            "name": "formDefId",
+            "label": "@@form.BootstrapStepsDisplayField.formDefId@@",
+            "type": "selectbox",
+            "required": "True",
+            "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options",
+            "control_field": "datasource",
+            "control_value": "formdata"
+         },
+         {
+            "name": "numbering",
+            "label": "@@form.BootstrapStepsDisplayField.numbering@@",
+            "description":"@@form.BootstrapStepsDisplayField.numbering.desc@@",
+            "type": "selectbox",
+            "options_ajax_on_change": "formDefId",
+            "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+            "required": "True",
+            "control_field": "datasource",
+            "control_value": "formdata"
+         },
+         {
+            "name": "icon",
+            "label": "@@form.BootstrapStepsDisplayField.icon@@",
+            "description":"@@form.BootstrapStepsDisplayField.icon.desc@@",
+            "type": "selectbox",
+            "options_ajax_on_change": "formDefId",
+            "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+            "required": "True",
+            "control_field": "datasource",
+            "control_value": "formdata"
+         },
+         {
+            "name": "labelvalue",
+            "label": "@@form.BootstrapStepsDisplayField.label@@",
+            "description":"@@form.BootstrapStepsDisplayField.label.desc@@",
+            "type": "selectbox",
+            "options_ajax_on_change": "formDefId",
+            "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+            "required": "True",
+            "control_field": "datasource",
+            "control_value": "formdata"
+         },
+         {
+            "name": "value",
+            "label": "@@form.BootstrapStepsDisplayField.value@@",
+            "description":"@@form.BootstrapStepsDisplayField.value.desc@@",
+            "type": "selectbox",
+            "options_ajax_on_change": "formDefId",
+            "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+            "required": "True",
+            "control_field": "datasource",
+            "control_value": "formdata"
          }
       ]
    }
